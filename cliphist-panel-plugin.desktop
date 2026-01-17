@@ -1,0 +1,9 @@
+[Xfce Panel]
+Type=X-XFCE-PanelPlugin
+Encoding=UTF-8
+Name=Clipboard History
+Comment=Display and manage clipboard history with cliphist
+Icon=cliphist-icon
+X-XFCE-Module=cliphist-panel-plugin
+X-XFCE-API=2.0
+X-XFCE-Unique=false

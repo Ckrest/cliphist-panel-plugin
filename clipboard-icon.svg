@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" version="1.1" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#ffffff">
+    <!-- Clipboard body -->
+    <rect x="12" y="14" width="24" height="30" rx="2" ry="2" fill="none" stroke="#ffffff" stroke-width="2"/>
+
+    <!-- Clipboard top -->
+    <rect x="18" y="10" width="12" height="6" rx="1" ry="1" fill="none" stroke="#ffffff" stroke-width="2"/>
+
+    <!-- Document lines -->
+    <line x1="16" y1="20" x2="32" y2="20" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="16" y1="25" x2="32" y2="25" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="16" y1="30" x2="28" y2="30" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="16" y1="35" x2="30" y2="35" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>
