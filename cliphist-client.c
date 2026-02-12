@@ -93,7 +93,7 @@ cliphist_client_refresh_entries(CliphistClient *client)
 void
 cliphist_client_select_entry(CliphistClient *client, guint index)
 {
-    gchar *cmd = g_strdup_printf("cliphist list | sed -n '%d p' | cliphist decode | wl-copy", index + 1);
+    gchar *cmd = g_strdup_printf("/bin/sh -c 'cliphist list | sed -n \"%d p\" | cliphist decode | wl-copy'", index + 1);
     execute_command(cmd);
     g_free(cmd);
 }

@@ -1,3 +1,18 @@
 .system/
 *.o
 *.so
+
+# Published package requirements
+.env
+__pycache__/
+venv/
+.idea/
+.vscode/
+.DS_Store
+build/
+dist/
+*.log
+*.db
+*.sqlite3
+*.pkl
+*.pt

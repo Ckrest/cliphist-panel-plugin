@@ -1,0 +1,15 @@
+# cliphist-panel-plugin
+name: cliphist-panel-plugin
+description: XFCE panel plugin for cliphist clipboard history with image preview support
+state: draft
+traits:
+- published
+- build-required
+- gui
+tags:
+- XFCE
+- Wayland
+- C
+- GTK
+depends_on:
+- xfce4-panel
