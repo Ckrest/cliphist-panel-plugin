@@ -1,7 +1,6 @@
-# cliphist-panel-plugin
 name: cliphist-panel-plugin
 description: XFCE panel plugin for cliphist clipboard history with image preview support
-state: draft
+state: ready
 traits:
 - published
 - build-required
