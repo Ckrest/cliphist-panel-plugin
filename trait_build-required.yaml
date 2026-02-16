@@ -1,9 +1,0 @@
-# cliphist-panel-plugin - build-required trait configuration
-
-system: make
-command: make
-install: sudo -A make install
-installed_paths:
-- /usr/lib/x86_64-linux-gnu/xfce4/panel/plugins/libcliphist-panel-plugin.so
-- /usr/share/xfce4/panel/plugins/cliphist-panel-plugin.desktop
-- /usr/share/pixmaps/cliphist-icon.svg
