@@ -21,7 +21,7 @@ struct _CliphistClient
 
 CliphistClient *cliphist_client_new(CliphistPlugin *plugin);
 void cliphist_client_refresh_entries(CliphistClient *client);
-void cliphist_client_select_entry(CliphistClient *client, guint index);
+void cliphist_client_select_entry(CliphistClient *client, guint index, const gchar *mime_type);
 GdkPixbuf *cliphist_client_load_image(CliphistClient *client, guint index, gint max_width, gint max_height);
 
 G_END_DECLS

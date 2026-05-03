@@ -33,11 +33,11 @@ cliphist_button_menu_deactivate(CliphistButton *button, GtkMenuShell *menu)
 static void
 on_entry_selected(GtkMenuItem *menuitem, gpointer user_data)
 {
-    guint index = GPOINTER_TO_UINT(user_data);
+    CliphistEntry *entry = user_data;
     CliphistButton *button = g_object_get_data(G_OBJECT(menuitem), "cliphist-button");
 
     CliphistClient *client = cliphist_client_new(button->plugin);
-    cliphist_client_select_entry(client, index);
+    cliphist_client_select_entry(client, entry->index, entry->mime_type);
     g_object_unref(client);
 }
 
@@ -217,7 +217,7 @@ cliphist_button_create_menu(CliphistButton *button)
 
             g_object_set_data(G_OBJECT(item), "cliphist-button", button);
             g_signal_connect(item, "activate", G_CALLBACK(on_entry_selected),
-                           GUINT_TO_POINTER(entry->index));
+                           entry);
 
             gtk_menu_shell_append(GTK_MENU_SHELL(menu), item);
         }

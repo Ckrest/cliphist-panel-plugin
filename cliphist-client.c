@@ -57,7 +57,7 @@ cliphist_client_refresh_entries(CliphistClient *client)
     g_list_free_full(client->plugin->entries, (GDestroyNotify)cliphist_entry_free);
     client->plugin->entries = NULL;
 
-    output = execute_command("cliphist list");
+    output = execute_command("/bin/sh -c \"cliphist list | perl -pe 'if (/^[^\\t]*\\t(.*)$/ && $1 =~ /[\\x00-\\x08\\x0B\\x0C\\x0E-\\x1F\\x7F]/) { s/\\t.*$/\\tbinary data application\\/octet-stream/ }'\"");
     if (!output || strlen(output) == 0) {
         g_free(output);
         return;
@@ -82,7 +82,7 @@ cliphist_client_refresh_entries(CliphistClient *client)
             mime_type = text + strlen("binary data ");
         }
 
-        CliphistEntry *entry = cliphist_entry_new(count, text, mime_type);
+        CliphistEntry *entry = cliphist_entry_new(i, text, mime_type);
         client->plugin->entries = g_list_append(client->plugin->entries, entry);
         count++;
     }
@@ -91,10 +91,13 @@ cliphist_client_refresh_entries(CliphistClient *client)
 }
 
 void
-cliphist_client_select_entry(CliphistClient *client, guint index)
+cliphist_client_select_entry(CliphistClient *client, guint index, const gchar *mime_type)
 {
-    gchar *cmd = g_strdup_printf("/bin/sh -c 'cliphist list | sed -n \"%d p\" | cliphist decode | wl-copy'", index + 1);
+    gchar *quoted_mime_type = g_shell_quote((mime_type && *mime_type) ? mime_type : "text/plain");
+    gchar *cmd = g_strdup_printf("/bin/sh -c \"cliphist list | sed -n '%d p' | cliphist decode | wl-copy --type %s\"",
+                                 index + 1, quoted_mime_type);
     execute_command(cmd);
+    g_free(quoted_mime_type);
     g_free(cmd);
 }
 
