@@ -9,7 +9,7 @@
 
 G_DEFINE_TYPE(CliphistClient, cliphist_client, G_TYPE_OBJECT);
 
-#define MAX_ENTRIES 6
+#define MAX_ENTRIES 20
 
 static gchar *
 execute_command(const gchar *command)

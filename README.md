@@ -5,7 +5,7 @@ XFCE panel plugin for [cliphist](https://github.com/sentriz/cliphist) clipboard 
 ## Features
 
 - Panel button with clipboard icon
-- Click to show last 6 clipboard entries
+- Click to show last 20 clipboard entries
 - Select entry to copy to clipboard
 - Image preview support (thumbnails up to 300x200px)
 - Automatic image detection and display
